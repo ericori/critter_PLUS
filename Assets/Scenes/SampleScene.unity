@@ -519,11 +519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354016767166400369, guid: b3f68d70d9a01734fa75713b0d50d8e8, type: 3}
       propertyPath: full
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5354016767166400369, guid: b3f68d70d9a01734fa75713b0d50d8e8, type: 3}
       propertyPath: hunger
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5354016767166400371, guid: b3f68d70d9a01734fa75713b0d50d8e8, type: 3}
       propertyPath: foodWait
