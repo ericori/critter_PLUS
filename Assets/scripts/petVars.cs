@@ -14,6 +14,11 @@ public class petVars : MonoBehaviour
     public bool full; //will be private after testing
     public int friendRank; //will be private after testing
 
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -31,11 +36,17 @@ public class petVars : MonoBehaviour
         else
             full = false;
 
+        //if (full == true)
+        //{
+        //    audioManager.PlaySFX(audioManager.full);
+        //}
+
         if (full == true && affection >= affectionCap) //friend rank increase
         {
             friendRank++;
             affection = affectionReset; //resets affection to affectionReset (value = 0)
             affectionCap = affectionCap * capMultiplier; //increases cap by value determined in editor
+            audioManager.PlaySFX(audioManager.levelUp);
         }
 
 
@@ -43,4 +54,3 @@ public class petVars : MonoBehaviour
 
 
 }
-
