@@ -6,6 +6,7 @@ public class petInteractivity : MonoBehaviour
 {
     public petVars pVars;
     public GameObject heart;
+    public missionController mission;
 
     private float affectionTimer = 0.0f;  // Timer to control affection addition rate
     public float affectionInterval = 0.2f;  // Interval in seconds at which affection is added
@@ -56,6 +57,10 @@ public class petInteractivity : MonoBehaviour
         pVars.affection += 5;
         Debug.Log("Affection up. It is now:" + pVars.affection);
         Debug.Log("Playing Sound Effect Now:");
+
+        //making sure the right mission gets incremented for progress
+        mission.missionDistributer("Pet");
+
         audioManager.PlaySFX(audioManager.dogBark);
         SpawnHeart(clickPosition);
         _animator.SetBool(name: "isLoved", isLoved);
@@ -73,6 +78,9 @@ public class petInteractivity : MonoBehaviour
             brushTracker += 20;
             Debug.Log("BRUSH Affection up. It is now: " + pVars.affection);
             SpawnHeart(position);
+
+            //making sure the right mission gets incremented for progress
+            mission.missionDistributer("Brush");
 
             _animator.SetBool(name: "isLoved", isLoved);
             Invoke("ResetIsLoved", _animator.GetCurrentAnimatorStateInfo(0).length);

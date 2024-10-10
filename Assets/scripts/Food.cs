@@ -5,6 +5,7 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     public petVars pVars;
+    public missionController mission;
     
     private bool grab = false;
     public GameObject doggy;
@@ -77,6 +78,10 @@ public class Food : MonoBehaviour
             {
                 other.GetComponentInParent<petInteractivity>().SubtractHungerWhenFed();
                 other.GetComponentInParent<petInteractivity>().SubtractKibbleWhenFed();
+
+                //for mission increment
+                mission.missionDistributer("Feed");
+
                 grab = false;
             }
             else
