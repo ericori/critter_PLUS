@@ -101,6 +101,17 @@ public class petInteractivity : MonoBehaviour
         }
     }
 
+    public void SubtractKibbleWhenFed()
+    {
+        if(foodTimer <= 0 && pVars.kibbleCount > 0){
+            pVars.kibbleCount -= 1;
+            Debug.Log("You have " + pVars.kibbleCount + " bowls of kibble left.");
+        }
+        else{
+            Debug.Log("You don't have any kibble!");
+        }
+    }
+
     private void ResetIsLoved()
     {
         isLoved = false;

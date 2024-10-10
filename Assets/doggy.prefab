@@ -188,6 +188,8 @@ MonoBehaviour:
   hunger: 100
   full: 0
   friendRank: 0
+  kibbleCount: 1
+  critterCoin: 0
 --- !u!61 &5354016767166400368
 BoxCollider2D:
   m_ObjectHideFlags: 0

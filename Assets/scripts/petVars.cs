@@ -13,6 +13,9 @@ public class petVars : MonoBehaviour
     public int hunger;
     public bool full; //will be private after testing
     public int friendRank; //will be private after testing
+    public int kibbleCount;
+    public int critterCoin;
+    //public int kibbleCap = 10;
 
     AudioManager audioManager;
     private void Awake()
