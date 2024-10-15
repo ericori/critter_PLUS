@@ -10,12 +10,16 @@ public class petVars : MonoBehaviour
     public int affectionCap; //affection requirement for increasing friendRank
     public int capMultiplier;
     private int affectionReset = 0;
-    public int hunger;
+    public int hunger = 0;
     public bool full; //will be private after testing
     public int friendRank; //will be private after testing
-    public int kibbleCount;
-    public int critterCoin;
-    //public int kibbleCap = 10;
+
+    // Jorge Added these variables
+    public int critterCoin = 0;
+    public string[] dailyTasks = { "task 1", "task 2", "task 3"};
+    public int fullness = 0;
+
+    //fullness = 100 - hunger;
 
     AudioManager audioManager;
     private void Awake()
@@ -37,8 +41,10 @@ public class petVars : MonoBehaviour
             full = true;
         }
         else
+        {
             full = false;
-
+        }
+            
         //if (full == true)
         //{
         //    audioManager.PlaySFX(audioManager.full);

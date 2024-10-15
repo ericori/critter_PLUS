@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    public petVars pVars;
-    public missionController mission;
-    
     private bool grab = false;
     public GameObject doggy;
-    public GameObject kibble;
     private Vector3 offset;
     private Vector3 startPosition;
     private RectTransform dogPosition;
     private Vector2 localMousePosition;
-    private Vector3 destroyPosition;
 
 
 
@@ -24,7 +19,6 @@ public class Food : MonoBehaviour
         // Record Food's start position
         startPosition = transform.position;
         dogPosition = doggy.GetComponent<RectTransform>();
-        destroyPosition = new Vector3(15.0f, -4.52f, -1.0f);
 
 
     }
@@ -45,11 +39,6 @@ public class Food : MonoBehaviour
             // return object
             transform.position = startPosition;
         }
-
-        if(pVars.kibbleCount == 0){
-            transform.position = destroyPosition;
-        }
-
     }
 
     private void OnMouseDown()
@@ -77,11 +66,6 @@ public class Food : MonoBehaviour
             if (grab)
             {
                 other.GetComponentInParent<petInteractivity>().SubtractHungerWhenFed();
-                other.GetComponentInParent<petInteractivity>().SubtractKibbleWhenFed();
-
-                //for mission increment
-                mission.missionDistributer("Feed");
-
                 grab = false;
             }
             else

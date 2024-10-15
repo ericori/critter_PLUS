@@ -1313,6 +1313,7 @@ MonoBehaviour:
   dogBark: {fileID: 8300000, guid: 373ec22c91accf64c9b952ba7507c522, type: 3}
   dogBarks: {fileID: 8300000, guid: c5327ba48dac93942aa8b02128b59bbc, type: 3}
   levelUp: {fileID: 8300000, guid: bbfb6cdf364ac7447bdd83682683e263, type: 3}
+  full: {fileID: 0}
 --- !u!4 &1383794610
 Transform:
   m_ObjectHideFlags: 0
