@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 484535404}
   - component: {fileID: 484535403}
   m_Layer: 5
-  m_Name: Feed 10 Times
+  m_Name: Mission1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,7 +1333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &915774111
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 970696552}
   - component: {fileID: 970696551}
   m_Layer: 5
-  m_Name: Play 1 Times
+  m_Name: Mission3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 1055506097}
   - component: {fileID: 1055506096}
   m_Layer: 5
-  m_Name: Pet 106 Times
+  m_Name: Mission2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2227,6 +2227,7 @@ GameObject:
   - component: {fileID: 1991194980}
   - component: {fileID: 1991194982}
   - component: {fileID: 1991194981}
+  - component: {fileID: 1991194983}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2299,6 +2300,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991194979}
   m_CullTransparentMesh: 1
+--- !u!114 &1991194983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991194979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02719c3575bb39e41839c4e83fa92cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missions: {fileID: 0}
+  tasks:
+  - {fileID: 484535401}
+  - {fileID: 1055506094}
+  - {fileID: 970696549}
 --- !u!1 &2017382230
 GameObject:
   m_ObjectHideFlags: 0
