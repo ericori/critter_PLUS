@@ -12,6 +12,8 @@ public class missionController : MonoBehaviour
 
     //to get unique values, we should use a dictionary/hashmap since it does not allow duplicates. Plus, easier and faster for lookups
     public Dictionary<string, ScriptableMissions> dailyMissionHashMap = new Dictionary<string, ScriptableMissions>();
+    public dailyTasks tasks;
+
 
     void Start()
     {
@@ -31,7 +33,6 @@ public class missionController : MonoBehaviour
         
     }
 
-    //need to fix cuz they need to be 3 unique integers!
     public void assignDailyMissions()
     {
         
@@ -50,6 +51,7 @@ public class missionController : MonoBehaviour
                 i++;
             }
         }
+        changePetHUD();
     }
 
     //reset progress after new day (RTC)
@@ -70,6 +72,7 @@ public class missionController : MonoBehaviour
         if (!scriptableMission.missionCompleted)
         {
             scriptableMission.missionProgressCounter++;
+            changePetHUD();
 
             if(scriptableMission.missionProgressCounter == scriptableMission.missionCompletionTotal)
             {
@@ -85,6 +88,7 @@ public class missionController : MonoBehaviour
         if (inMap(key) && dailyMissionHashMap[key].isActive && !dailyMissionHashMap[key].missionCompleted)
         {
             addCompletionPoints(dailyMissionHashMap[key]);
+            changePetHUD();
             Debug.Log(dailyMissionHashMap[key].name + ": " + dailyMissionHashMap[key].missionProgressCounter + " of " + dailyMissionHashMap[key].missionCompletionTotal);
         }
     }
@@ -107,5 +111,10 @@ public class missionController : MonoBehaviour
             allMissions[i].missionCompleted = false;
             allMissions[i].isActive = false;
         }
+    }
+
+    public void changePetHUD()
+    {
+        tasks.missionToTask(dailyMissionHashMap);
     }
 }
