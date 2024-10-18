@@ -129,7 +129,7 @@ public class GPMenu : MonoBehaviour
     // Update the Text component to display the current affection value
     void UpdateAffectionText()
     {
-        affectionText.text = "Affection: " + pet.affection.ToString();
+        affectionText.text = pet.affection.ToString();
     }
 
     // Helper method to check if the pointer is over the UI menu
