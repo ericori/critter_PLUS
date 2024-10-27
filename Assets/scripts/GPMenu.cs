@@ -1,54 +1,3 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GPMenu : MonoBehaviour
-{
-    public GameObject menuPanel;
-    public RectTransform menuRectTransform;
-
-    private bool isMenuActive = false;
-
-    void Update()
-    {
-        // Check if the spacebar is pressed to toggle the menu
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isMenuActive = !isMenuActive;
-            menuPanel.SetActive(isMenuActive);
-        }
-
-        // Right-click to close the menu (only close, not reopen)
-        if (Input.GetMouseButtonDown(1))  // 1 is right mouse button
-        {
-            if (isMenuActive)
-            {
-                isMenuActive = false;
-                menuPanel.SetActive(false);
-            }
-        }
-
-        // Left-click outside the menu to close it
-        if (Input.GetMouseButtonDown(0))  // 0 is left mouse button
-        {
-            if (isMenuActive && !IsPointerOverUIElement(menuRectTransform))
-            {
-                isMenuActive = false;
-                menuPanel.SetActive(false);
-            }
-        }
-    }
-
-    // Helper method to check if the pointer is over the UI menu
-    private bool IsPointerOverUIElement(RectTransform uiElement)
-    {
-        // Convert mouse position to a point in the world space of the UI canvas
-        Vector2 localMousePosition = uiElement.InverseTransformPoint(Input.mousePosition);
-
-        // Check if the click is within the bounds of the UI element's RectTransform
-        return uiElement.rect.Contains(localMousePosition);
-    }
-}*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -117,13 +66,13 @@ public class GPMenu : MonoBehaviour
     // Update the Text component to display the current critterCoin value
     void UpdateCoinText()
     {
-        coinText.text = "Coins: " + pet.critterCoin.ToString();
+        coinText.text = pet.critterCoin.ToString();
     }
 
     // Update the Text component to display the current hunger value
     void UpdateHungerText()
     {
-        hungerText.text = "Hunger: " + pet.hunger.ToString();
+        hungerText.text = pet.hunger.ToString();
     }
 
     // Update the Text component to display the current affection value
