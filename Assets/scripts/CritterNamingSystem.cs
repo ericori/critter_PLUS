@@ -14,8 +14,8 @@ public class CritterNamingSystem : MonoBehaviour
     {
         petVariables = FindObjectOfType<petVars>(); // Finds the petVars instance in the scene
         namingPanel.SetActive(false); // Hide the naming panel initially
-
-        // Add a listener to detect when the Enter key is pressed
+        
+        // Optional: Add listener to the input field if you want Enter key to also close the panel
         nameInputField.onSubmit.AddListener(delegate { SubmitName(); });
     }
 
@@ -32,17 +32,18 @@ public class CritterNamingSystem : MonoBehaviour
     // Call this method when the player submits the name
     public void SubmitName()
     {
-        // Get the entered name
         string critterName = nameInputField.text;
 
-        // Check if the input is empty
         if (!string.IsNullOrWhiteSpace(critterName))
         {
-            // Display the name on the food bowl
             nameDisplayText.text = critterName;
-
-            // Hide the naming panel after submission
-            namingPanel.SetActive(false);
+            CloseNamingPanel(); // Close the naming panel after submitting
         }
+    }
+
+    // Method to close the naming panel
+    public void CloseNamingPanel()
+    {
+        namingPanel.SetActive(false);
     }
 }
