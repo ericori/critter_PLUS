@@ -10,6 +10,8 @@ public class CritterNamingSystem : MonoBehaviour
     public TextMeshPro nameDisplayText; // The 3D TextMeshPro text on the food bowl
     private petVars petVariables; // Reference to the petVars script
 
+    public bool nameSet = false;
+
     void Start()
     {
         petVariables = FindObjectOfType<petVars>(); // Finds the petVars instance in the scene
@@ -22,7 +24,7 @@ public class CritterNamingSystem : MonoBehaviour
     void Update()
     {
         // Check if friendRank in petVars has reached 4
-        if (petVariables.friendRank == 4 && !namingPanel.activeSelf)
+        if (petVariables.friendRank == 4 && !namingPanel.activeSelf && nameSet == false)
         {
             // Show the naming panel
             namingPanel.SetActive(true);
@@ -38,6 +40,7 @@ public class CritterNamingSystem : MonoBehaviour
         {
             nameDisplayText.text = critterName;
             CloseNamingPanel(); // Close the naming panel after submitting
+            nameSet = true;
         }
     }
 
