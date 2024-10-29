@@ -12,6 +12,7 @@ public class GPMenu : MonoBehaviour
     public TextMeshProUGUI hungerText;
     public TextMeshProUGUI affectionText;
     public petVars pet;    // Reference to the petVars script to access critterCoin
+    public darkMode darkMode;
 
     private bool isMenuActive = false;
 
@@ -39,6 +40,7 @@ public class GPMenu : MonoBehaviour
                 UpdateCoinText();
                 UpdateHungerText();
                 UpdateAffectionText();
+                darkMode.lightAndDarkMode();
             }
         }
 
