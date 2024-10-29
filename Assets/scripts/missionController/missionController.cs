@@ -35,7 +35,7 @@ public class missionController : MonoBehaviour
 
     public void assignDailyMissions()
     {
-        
+        dailyMissionHashMap.Clear();
         //random number
         System.Random rand = new System.Random();
 
