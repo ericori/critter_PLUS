@@ -4,10 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.WSA;
 
 public class MiniGame : MonoBehaviour
 {
     public List<GameObject> hideMe;
+    public GameObject hideBrush;
+    public GameObject[] hideStars;
     public GameObject miniRoom;
     public GameObject dogSprite;
     public GameObject fruit;
@@ -83,14 +86,28 @@ public class MiniGame : MonoBehaviour
 
     public void setUp()
     {
+        UnityEngine.Cursor.visible = false;
         calledForReset = false;
         isMiniGameActive = true;
         score = 0;
         overallTimer = 30;
         updateScore();
 
+        Brush brush = FindObjectOfType<Brush>();
+        if(brush != null)
+        {
+            hideBrush = brush.gameObject;
+            hideBrush.SetActive(false);
+        }
+
+        hideStars = GameObject.FindGameObjectsWithTag("Star");
+        for(int i = 0; i < hideStars.Length; i++)
+        {
+            hideStars[i].SetActive(false);
+        }
+
         //hiding gameobjects from player to set up the mini game
-        foreach(GameObject var in hideMe)
+        foreach (GameObject var in hideMe)
         {
             var.SetActive(false);
         }
@@ -101,9 +118,20 @@ public class MiniGame : MonoBehaviour
 
     public void restoreBedroom()
     {
-        
+        UnityEngine.Cursor.visible = true;
         calledForReset = true;
-        foreach(GameObject var in hideMe)
+
+        if (hideBrush != null)
+        {
+            hideBrush.SetActive(true);
+        }
+
+        for (int i = 0; i < hideStars.Length; i++)
+        {
+            hideStars[i].SetActive(true);
+        }
+
+        foreach (GameObject var in hideMe)
         {
             var.SetActive(true);
         }
@@ -138,6 +166,7 @@ public class MiniGame : MonoBehaviour
         originalDog.gameObject.GetComponent<petVars>().critterCoin += score;
         critterCoin.text = score.ToString();
         endHUD.SetActive(true);
+        UnityEngine.Cursor.visible = true;
     }
 
 }
