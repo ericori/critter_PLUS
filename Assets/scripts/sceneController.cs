@@ -9,8 +9,10 @@ public class sceneController : MonoBehaviour
     private bool isStar1Spawned;
     private bool isStar2Spawned;
     private bool isStar3Spawned;
+    private bool isBallSpawned;
     public GameObject Brush; // call game object brush
     public GameObject Star; // call star
+    public GameObject Ball;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +64,13 @@ public class sceneController : MonoBehaviour
                 {
                     StarSpawn(scpVars.friendRank);
                     isStar3Spawned = true;
+                }
+                break;
+            case 5:
+                if(!isBallSpawned)
+                {
+                    Instantiate(Ball);
+                    isBallSpawned = true;
                 }
                 break;
             default:
