@@ -21,10 +21,6 @@ public class missionController : MonoBehaviour
 
         assignDailyMissions();
         
-        foreach(KeyValuePair<string, ScriptableMissions> kvp in dailyMissionHashMap)
-        {
-            Debug.Log("Mission: " + kvp.Key);
-        }
     }
 
     // Update is called once per frame
@@ -35,7 +31,7 @@ public class missionController : MonoBehaviour
 
     public void assignDailyMissions()
     {
-        
+        dailyMissionHashMap.Clear();
         //random number
         System.Random rand = new System.Random();
 
@@ -50,6 +46,10 @@ public class missionController : MonoBehaviour
                 dailyMissionHashMap[allMissions[randomIndex].missionName].isActive = true; //making the the mission active
                 i++;
             }
+        }
+        foreach (KeyValuePair<string, ScriptableMissions> kvp in dailyMissionHashMap)
+        {
+            Debug.Log("Mission: " + kvp.Key);
         }
         changePetHUD();
     }

@@ -11,8 +11,8 @@ public class petInteractivity : MonoBehaviour
     private float affectionTimer = 0.0f;  // Timer to control affection addition rate
     public float affectionInterval = 0.2f;  // Interval in seconds at which affection is added
 
-    private float foodTimer = 0.0f; // Timer to control how often the dog can be fed
-    public float foodWait = 0.5f; // Wait five seconds to feed again
+    //private float foodTimer = 0.0f; // Timer to control how often the dog can be fed
+    //public float foodWait = 0.5f; // Wait five seconds to feed again
 
     private Animator _animator;
     private bool isLoved = false; //transition variable for animations
@@ -41,10 +41,12 @@ public class petInteractivity : MonoBehaviour
             affectionTimer -= Time.deltaTime;
         }
 
+        /*
         if (foodTimer > 0)
         {
             foodTimer -= Time.deltaTime;
         }
+        */
     }
 
 
@@ -97,13 +99,22 @@ public class petInteractivity : MonoBehaviour
 
     public void SubtractHungerWhenFed()
     {
+        /* 
         if(foodTimer <= 0 && pVars.hunger > 0)
         {
             pVars.hunger -= 20;
             Debug.Log("Dog Fed. Hunger is: " + pVars.hunger);
 
             foodTimer = foodWait;
-        } else
+        } 
+        */
+
+        if(pVars.hunger > 0)
+        {
+            pVars.hunger -= 20;
+            Debug.Log("Dog Fed. Hunger is: " + pVars.hunger);
+        }
+        else
         {
             Debug.Log("Dog is not hungry");
         }
@@ -111,7 +122,15 @@ public class petInteractivity : MonoBehaviour
 
     public void SubtractKibbleWhenFed()
     {
+        /*
         if(foodTimer <= 0 && pVars.kibbleCount > 0){
+            pVars.kibbleCount -= 1;
+            Debug.Log("You have " + pVars.kibbleCount + " bowls of kibble left.");
+        }
+        */
+
+        if(pVars.kibbleCount > 0)
+        {
             pVars.kibbleCount -= 1;
             Debug.Log("You have " + pVars.kibbleCount + " bowls of kibble left.");
         }

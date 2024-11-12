@@ -1,10 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class toggleColorInversion : MonoBehaviour
 {
     public Material normalMaterial;
     public Material invertMaterial;
+
     private bool isInverted = false;
+    public bool invertCanvas = false;
+
+    //public GameObject canvas;
 
     void Update()
     {
@@ -23,12 +29,23 @@ public class toggleColorInversion : MonoBehaviour
     void ToggleInversion()
     {
         isInverted = !isInverted;
+        invertCanvas = isInverted;
 
         // Toggle material on all renderers in the scene
         SpriteRenderer[] renderers = FindObjectsOfType<SpriteRenderer>();
+
         foreach (SpriteRenderer renderer in renderers)
         {
             renderer.material = isInverted ? invertMaterial : normalMaterial;
         }
+
+        /*
+        canvas.GetComponent<CanvasRenderer>().SetMaterial(isInverted ? invertMaterial : normalMaterial, 0);
+        if(canvas.GetComponent<Outline>() != null)
+         {
+            canvas.GetComponent<Outline>().enabled = isInverted;
+         }
+        */
+        
     }
 }

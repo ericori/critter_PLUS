@@ -15,6 +15,7 @@ public class Food : MonoBehaviour
     private RectTransform dogPosition;
     private Vector2 localMousePosition;
     private Vector3 destroyPosition;
+    private Vector3 startSize;
 
 
 
@@ -26,6 +27,10 @@ public class Food : MonoBehaviour
         dogPosition = doggy.GetComponent<RectTransform>();
         destroyPosition = new Vector3(15.0f, -4.52f, -1.0f);
 
+        //pVars.kibbleCount = 5; //testing - set to 0 for now
+
+        // Record Food's starting size (for shrinking)
+        startSize = kibble.transform.localScale;
 
     }
 
@@ -46,7 +51,7 @@ public class Food : MonoBehaviour
             transform.position = startPosition;
         }
 
-        if(pVars.kibbleCount == 0){
+        if(pVars.kibbleCount <= 0){
             transform.position = destroyPosition;
         }
 
@@ -74,15 +79,28 @@ public class Food : MonoBehaviour
 
         if (other.gameObject.name == "mouth")
         {
+            Debug.Log("Kibble is over mouth");
             if (grab)
             {
-                other.GetComponentInParent<petInteractivity>().SubtractHungerWhenFed();
-                other.GetComponentInParent<petInteractivity>().SubtractKibbleWhenFed();
+                if (kibble.transform.localScale.x >= 0.1)
+                {
+                    kibble.transform.localScale -= Vector3.one * Time.deltaTime * 0.5f; // kibble shrinks when held over mouth
+                    Debug.Log("Kibble shrinking: " + kibble.transform.localScale.x);
+                }
+                else
+                {
+                    other.GetComponentInParent<petInteractivity>().SubtractHungerWhenFed();
+                    other.GetComponentInParent<petInteractivity>().SubtractKibbleWhenFed();
 
-                //for mission increment
-                mission.missionDistributer("Feed");
+                    Debug.Log("Kibble GONE");
 
-                grab = false;
+                    //for mission increment
+                    mission.missionDistributer("Feed");
+
+                    grab = false;
+
+                    kibble.transform.localScale = startSize; //reset to OG size
+                }
             }
             else
             {
