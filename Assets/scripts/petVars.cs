@@ -21,6 +21,7 @@ public class petVars : MonoBehaviour
     public GameObject genericTrophy;
     //public int kibbleCap = 10;
 
+
     AudioManager audioManager;
     private void Awake()
     {
@@ -54,6 +55,7 @@ public class petVars : MonoBehaviour
             affection = affectionReset; //resets affection to affectionReset (value = 0)
             affectionCap = affectionCap * capMultiplier; //increases cap by value determined in editor
             audioManager.PlaySFX(audioManager.levelUp);
+            //captionManager.showSubtitles();
         }
 
         if (starTrophy.activeSelf == false && friendRank >= 10)
