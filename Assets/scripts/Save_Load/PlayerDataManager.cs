@@ -17,6 +17,7 @@ public class PlayerDataManager : MonoBehaviour
     public sceneController sceneController;
     private CritterNamingSystem CNS;
     private WardrobeClick wardrobeClick;
+    public shoppingMenuV2 shoppingMenu;
 
     
     
@@ -25,6 +26,8 @@ public class PlayerDataManager : MonoBehaviour
     public int friendRank;
     public int kibbleCount;
     public int critterCoin;
+    public bool isCrownPurchased;
+    public bool isWizsoftCapPurchased;
 
     public void SaveGame()
     {
@@ -38,6 +41,8 @@ public class PlayerDataManager : MonoBehaviour
         playerData.kibbleCount = pVars.kibbleCount;
         playerData.critterCoin = pVars.critterCoin;
         playerData.currentHat = wardrobeClick.currentHat;
+        playerData.isCrownPurchased = shoppingMenu.isCrownPurchased;
+        playerData.isWizsoftCapPurchased = shoppingMenu.isWizsoftCapPurchased;
 
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
@@ -64,6 +69,8 @@ public class PlayerDataManager : MonoBehaviour
             pVars.kibbleCount = loadedData.kibbleCount;
             pVars.critterCoin = loadedData.critterCoin;
             wardrobeClick.currentHat = loadedData.currentHat;
+            shoppingMenu.isCrownPurchased = loadedData.isCrownPurchased;
+            shoppingMenu.isWizsoftCapPurchased = loadedData.isWizsoftCapPurchased;
 
             if(pVars.friendRank >= 1)
             {

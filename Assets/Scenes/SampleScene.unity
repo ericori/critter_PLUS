@@ -1614,11 +1614,14 @@ MonoBehaviour:
   Wardrobe: {fileID: 223464622}
   pVars: {fileID: 5354016767068954442}
   sceneController: {fileID: 201369296}
+  shoppingMenu: {fileID: 1981740344}
   affection: 0
   hunger: 0
   friendRank: 0
   kibbleCount: 0
   critterCoin: 0
+  isCrownPurchased: 0
+  isWizsoftCapPurchased: 0
 --- !u!4 &616380513
 Transform:
   m_ObjectHideFlags: 0

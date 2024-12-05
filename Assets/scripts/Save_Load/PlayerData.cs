@@ -12,4 +12,6 @@ public class PlayerData
     public int kibbleCount;
     public int critterCoin;
     public int currentHat;
+    public bool isCrownPurchased;
+    public bool isWizsoftCapPurchased;
 }
