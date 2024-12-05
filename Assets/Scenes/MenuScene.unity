@@ -1981,7 +1981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: critter
+  m_text: critter+
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 239fb23c6d35f744f93dfb6294101455, type: 2}
   m_sharedMaterial: {fileID: -6124741704006600126, guid: 239fb23c6d35f744f93dfb6294101455, type: 2}
