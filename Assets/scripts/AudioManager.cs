@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip dogBarks;
     public AudioClip levelUp;
     public AudioClip full;
+    public SubtitleManager subtitleManager;
+
 
     public static AudioManager instance;
     private void Awake()
@@ -38,11 +40,16 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = ThemeSong;
         musicSource.Play();
+
     }
 
     //Takes audioclips as param and play any sound wanted
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, int subtitleIndex, float duration)
     {
         SFXSource.PlayOneShot(clip);
+        if (subtitleManager != null)
+        {
+            subtitleManager.DisplaySubtitle(subtitleIndex, duration);
+        }
     }
 }

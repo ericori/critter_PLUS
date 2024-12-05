@@ -63,7 +63,7 @@ public class petInteractivity : MonoBehaviour
         //making sure the right mission gets incremented for progress
         mission.missionDistributer("Pet");
 
-        audioManager.PlaySFX(audioManager.dogBark);
+        audioManager.PlaySFX(audioManager.dogBark, 0, 3.0);
         SpawnHeart(clickPosition);
         _animator.SetBool(name: "isLoved", isLoved);
         Invoke("ResetIsLoved", _animator.GetCurrentAnimatorStateInfo(0).length);
