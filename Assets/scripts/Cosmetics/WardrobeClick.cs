@@ -8,6 +8,7 @@ public class WardrobeClick : MonoBehaviour
     public Sprite wizardHat; // Sprite for the wizard hat
     public Sprite crown; // Sprite for the crown
     public SpriteRenderer hatRenderer; // Renderer for the hat slot
+    public shoppingMenuV2 getHatState;
 
     public int currentHat = 0; // 0: no hat, 1: wizard hat, 2: crown
 
@@ -33,10 +34,24 @@ public class WardrobeClick : MonoBehaviour
                 hatRenderer.sprite = null; // No hat
                 break;
             case 1:
-                hatRenderer.sprite = wizardHat; // Wizard hat
+                if (getHatState.isWizsoftCapPurchased)
+                {
+                    hatRenderer.sprite = wizardHat; // Wizard hat
+                }
+                else
+                {
+                    hatRenderer.sprite = null; // No hat
+                }
                 break;
             case 2:
-                hatRenderer.sprite = crown; // Crown
+                if (getHatState.isCrownPurchased)
+                {
+                    hatRenderer.sprite = crown; // Crown
+                }
+                else
+                {
+                    hatRenderer.sprite = null; // No hat
+                }
                 break;
         }
     }

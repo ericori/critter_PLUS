@@ -12,8 +12,14 @@ public class shoppingMenuV2 : MonoBehaviour
     public TextMeshProUGUI kibbleText; // Text to display the number of kibble
     public TextMeshProUGUI shopTitleText; // Text for the shop title
     public Button buyKibbleButton; // Buy button for kibble
+    public Button buyCrownHat;
+    public Button buyWizsoftCap;
+    public bool isCrownPurchased = false;
+    public bool isWizsoftCapPurchased = false;
 
     public int kibblePrice = 10; // Cost of one kibble
+    public int crownPrice = 500;
+    public int wizsoftPrice = 100;
 
     private bool isMenuActive = false;
     private petVars pet; // Reference to petVars for shared critterCoin and kibbleCount
@@ -55,6 +61,22 @@ public class shoppingMenuV2 : MonoBehaviour
         else
         {
             Debug.LogError("Buy Kibble Button is not assigned in the Inspector.");
+        }
+        if (buyCrownHat != null)
+        {
+            buyCrownHat.onClick.AddListener(BuyCrown);
+        }
+        else
+        {
+            Debug.LogError("Buy Crown Button is not assigned in the Inspector.");
+        }
+        if (buyWizsoftCap != null)
+        {
+            buyWizsoftCap.onClick.AddListener(BuyWizsoftCap);
+        }
+        else
+        {
+            Debug.LogError("Buy WizsoftCap Button is not assigned in the Inspector.");
         }
     }
 
@@ -109,13 +131,51 @@ public class shoppingMenuV2 : MonoBehaviour
         }
     }
 
+    private void BuyCrown()
+    {
+        if (pet != null && pet.critterCoin >= crownPrice && isCrownPurchased == false)
+        {
+            pet.critterCoin -= crownPrice;
+            isCrownPurchased = true;
+            UpdateUI(); // Update the UI immediately after purchase
+            Debug.Log("Crowm purchased!");
+        }
+        else if (pet != null && pet.critterCoin < crownPrice)
+        {
+            Debug.Log("Not enough Critter Coins to buy kibble.");
+        }
+        else
+        {
+            Debug.LogError("petVars reference is missing.");
+        }
+    }
+
+    private void BuyWizsoftCap()
+    {
+        if (pet != null && pet.critterCoin >= wizsoftPrice && isWizsoftCapPurchased == false)
+        {
+            pet.critterCoin -= wizsoftPrice;
+            isWizsoftCapPurchased = true;
+            UpdateUI(); // Update the UI immediately after purchase
+            Debug.Log("Kibble purchased!");
+        }
+        else if (pet != null && pet.critterCoin < kibblePrice)
+        {
+            Debug.Log("Not enough Critter Coins to buy kibble.");
+        }
+        else
+        {
+            Debug.LogError("petVars reference is missing.");
+        }
+    }
+
     // Method to update the text display
     private void UpdateUI()
     {
         if (pet != null)
         {
             ccoinText.text = "Critter Coins: " + pet.critterCoin;
-            kibbleText.text = "Kibble: " + pet.kibbleCount;
+            kibbleText.text = "Total Kibble: " + pet.kibbleCount;
         }
         else
         {
