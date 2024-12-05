@@ -4171,6 +4171,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6446611938561671442, guid: 150f05a68aaf9eb4ebfdbf13418e7723, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446611938561671442, guid: 150f05a68aaf9eb4ebfdbf13418e7723, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1085.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6446611938561671444, guid: 150f05a68aaf9eb4ebfdbf13418e7723, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5293,7 +5301,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000061035, y: 0.000030518}
-  m_SizeDelta: {x: 1668.2, y: 815.3}
+  m_SizeDelta: {x: 1668.2, y: 2850.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1883641546
 PrefabInstance:
