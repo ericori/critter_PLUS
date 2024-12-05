@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip dogBarks;
     public AudioClip levelUp;
     public AudioClip full;
+    public bool isClosedCaptioned = false;
 
     public static AudioManager instance;
     private void Awake()
