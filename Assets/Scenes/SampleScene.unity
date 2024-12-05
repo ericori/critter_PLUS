@@ -3721,6 +3721,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1861629049}
     - target: {fileID: 2240084620477253270, guid: 12a8232eb603f854ebea7b1a987ee849, type: 3}
+      propertyPath: kibblePrice
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240084620477253270, guid: 12a8232eb603f854ebea7b1a987ee849, type: 3}
       propertyPath: buyWizsoftCap
       value: 
       objectReference: {fileID: 752188567}
