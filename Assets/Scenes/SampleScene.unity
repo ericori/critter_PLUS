@@ -369,6 +369,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &55943157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2240084620477253271, guid: 12a8232eb603f854ebea7b1a987ee849, type: 3}
+  m_PrefabInstance: {fileID: 1271479851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &59467757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,6 +4883,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371631644}
   m_CullTransparentMesh: 1
+--- !u!1 &1415741900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3641894739134126723, guid: 213b716d653e7554d8eb460b022e7f21, type: 3}
+  m_PrefabInstance: {fileID: 1007321362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1418639348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,7 +5197,9 @@ MonoBehaviour:
   - {fileID: 1730868448}
   - {fileID: 162670588}
   - {fileID: 230670094}
-  - {fileID: 201369294}
+  - {fileID: 55943157}
+  - {fileID: 1968421504}
+  - {fileID: 1415741900}
   hideBrush: {fileID: 0}
   hideStars: []
   miniRoom: {fileID: 2087350017}
@@ -6988,7 +7000,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2240084620477253270, guid: 12a8232eb603f854ebea7b1a987ee849, type: 3}
   m_PrefabInstance: {fileID: 1271479851}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 55943157}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57ed671c2f856e74fa642833d1d93b20, type: 3}
