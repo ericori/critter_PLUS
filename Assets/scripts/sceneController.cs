@@ -13,6 +13,7 @@ public class sceneController : MonoBehaviour
     public GameObject Brush; // call game object brush
     public GameObject Star; // call star
     public GameObject Ball;
+    public GameObject Save_Load_Panel;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class sceneController : MonoBehaviour
         isStar1Spawned = false;
         isStar2Spawned = false;
         isStar3Spawned = false;
+
+        Save_Load_Panel.SetActive(false);
 
         //petVars scpVars = FindObjectOfType<petVars>();
         //if (scpVars != null)// debug
@@ -84,13 +87,20 @@ public class sceneController : MonoBehaviour
             Instantiate(Brush);
             isBrushSpawned = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.S)) 
+        {
+            if(Save_Load_Panel.active == false)
+            {
+                Save_Load_Panel.SetActive(true);
+            }
+            else { Save_Load_Panel.SetActive(false); }
+        }
     }
 
     public void StarSpawn(int n)
     {
         Instantiate(Star, new Vector3(2 * (n - 1) + Star.transform.position.x, Star.transform.position.y, -1), Quaternion.identity);
     }
-
-
 
 }

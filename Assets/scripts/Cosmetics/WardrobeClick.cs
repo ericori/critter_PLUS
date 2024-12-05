@@ -7,9 +7,9 @@ public class WardrobeClick : MonoBehaviour
     public GameObject character; // Reference to the character GameObject
     public Sprite wizardHat; // Sprite for the wizard hat
     public Sprite crown; // Sprite for the crown
-    private SpriteRenderer hatRenderer; // Renderer for the hat slot
+    public SpriteRenderer hatRenderer; // Renderer for the hat slot
 
-    private int currentHat = 0; // 0: no hat, 1: wizard hat, 2: crown
+    public int currentHat = 0; // 0: no hat, 1: wizard hat, 2: crown
 
     void Start()
     {
