@@ -48,7 +48,7 @@ public class Fruits : MonoBehaviour
 
         if (other.gameObject.name == "mouth")
         {
-            miniGame.score++;
+            miniGame.score+=10;
             miniGame.updateScore();
             Destroy(this.gameObject);
             Debug.Log("Hit Mouth");

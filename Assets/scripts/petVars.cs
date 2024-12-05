@@ -65,7 +65,7 @@ public class petVars : MonoBehaviour
             //captionManager.showSubtitles();
         }
 
-        if (starTrophy.activeSelf == false && friendRank >= 10)
+        if (starTrophy.activeSelf == false && friendRank >= 4)
         {
             revealTrophy.revealTrophy(starTrophy);
         }
