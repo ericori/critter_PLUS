@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleButton: {fileID: 1780392306}
+  audioManager: {fileID: 1383794609}
 --- !u!1 &460426808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,6 +1500,7 @@ MonoBehaviour:
   dogBarks: {fileID: 8300000, guid: c5327ba48dac93942aa8b02128b59bbc, type: 3}
   levelUp: {fileID: 8300000, guid: bbfb6cdf364ac7447bdd83682683e263, type: 3}
   full: {fileID: 0}
+  isClosedCaptioned: 0
 --- !u!4 &1383794610
 Transform:
   m_ObjectHideFlags: 0

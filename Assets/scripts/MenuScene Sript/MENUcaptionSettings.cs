@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MENUcaptionSettings : MonoBehaviour
 {
     public Button toggleButton;
+    public AudioManager audioManager;
 
     void Start()
     {
@@ -17,6 +18,8 @@ public class MENUcaptionSettings : MonoBehaviour
 
     void ToggleSubtitles()
     {
+        audioManager.isClosedCaptioned = true;
+
         captionSettings.CaptionsEnabled = !captionSettings.CaptionsEnabled;
 
         UpdateButtonLabel();

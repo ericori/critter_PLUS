@@ -19,6 +19,7 @@ public class petVars : MonoBehaviour
     public TrophySystem revealTrophy;
     public GameObject starTrophy;
     public GameObject genericTrophy;
+    public CCText ccText;
     //public int kibbleCap = 10;
 
 
@@ -55,6 +56,11 @@ public class petVars : MonoBehaviour
             affection = affectionReset; //resets affection to affectionReset (value = 0)
             affectionCap = affectionCap * capMultiplier; //increases cap by value determined in editor
             audioManager.PlaySFX(audioManager.levelUp);
+            
+            if (audioManager.isClosedCaptioned)
+            {
+                ccText.changeCCText("CC:[TWINKLE]");
+            }
             //captionManager.showSubtitles();
         }
 

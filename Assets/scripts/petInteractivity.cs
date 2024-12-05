@@ -19,6 +19,7 @@ public class petInteractivity : MonoBehaviour
     private int brushTracker = 0;
 
     AudioManager audioManager;
+    public CCText ccText;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -64,6 +65,11 @@ public class petInteractivity : MonoBehaviour
         mission.missionDistributer("Pet");
 
         audioManager.PlaySFX(audioManager.dogBark);
+        if (audioManager.isClosedCaptioned)
+        {
+            ccText.changeCCText("CC:[BARK]");
+        }
+
         SpawnHeart(clickPosition);
         _animator.SetBool(name: "isLoved", isLoved);
         Invoke("ResetIsLoved", _animator.GetCurrentAnimatorStateInfo(0).length);
@@ -90,6 +96,10 @@ public class petInteractivity : MonoBehaviour
             if (brushTracker % 120 == 0)
             {
                 audioManager.PlaySFX(audioManager.dogBarks);
+                if (audioManager.isClosedCaptioned)
+                {
+                    ccText.changeCCText("CC:[BARKBARKBARKBARK]");
+                }
             }
 
             // Reset the timer
