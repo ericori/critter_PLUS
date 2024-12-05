@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class petVars : MonoBehaviour
@@ -15,6 +16,9 @@ public class petVars : MonoBehaviour
     public int friendRank; //will be private after testing
     public int kibbleCount;
     public int critterCoin;
+    public TrophySystem revealTrophy;
+    public GameObject starTrophy;
+    public GameObject genericTrophy;
     //public int kibbleCap = 10;
 
     AudioManager audioManager;
@@ -50,6 +54,16 @@ public class petVars : MonoBehaviour
             affection = affectionReset; //resets affection to affectionReset (value = 0)
             affectionCap = affectionCap * capMultiplier; //increases cap by value determined in editor
             audioManager.PlaySFX(audioManager.levelUp);
+        }
+
+        if (starTrophy.activeSelf == false && friendRank >= 10)
+        {
+            revealTrophy.revealTrophy(starTrophy);
+        }
+
+        if (genericTrophy.activeSelf == false && critterCoin >= 500)
+        {
+            revealTrophy.revealTrophy(genericTrophy);
         }
 
 

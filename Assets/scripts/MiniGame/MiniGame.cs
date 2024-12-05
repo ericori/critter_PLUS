@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using UnityEngine.WSA;
+//using UnityEngine.WSA;
 
 public class MiniGame : MonoBehaviour
 {
