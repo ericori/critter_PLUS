@@ -39,8 +39,10 @@ public class CritterNamingSystem : MonoBehaviour
         if (!string.IsNullOrWhiteSpace(critterName))
         {
             nameDisplayText.text = critterName;
+            petVariables.doggyName = critterName;
             CloseNamingPanel(); // Close the naming panel after submitting
             nameSet = true;
+            Debug.Log("GET NAMED");
         }
     }
 

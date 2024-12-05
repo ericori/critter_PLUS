@@ -16,6 +16,7 @@ public class petVars : MonoBehaviour
     public int friendRank; //will be private after testing
     public int kibbleCount;
     public int critterCoin;
+    public string doggyName;
     public TrophySystem revealTrophy;
     public GameObject starTrophy;
     public GameObject genericTrophy;

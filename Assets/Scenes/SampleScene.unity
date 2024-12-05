@@ -472,6 +472,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7124969325765916807, guid: ca873e4d8a5ba834c9310fa9c1ef5057, type: 3}
   m_PrefabInstance: {fileID: 1883641546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &162670589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7124969325765916810, guid: ca873e4d8a5ba834c9310fa9c1ef5057, type: 3}
+  m_PrefabInstance: {fileID: 1883641546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162670588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50846158b6885bf47ac85a98b3119621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201369294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1625,7 @@ MonoBehaviour:
   Wardrobe: {fileID: 223464622}
   pVars: {fileID: 5354016767068954442}
   sceneController: {fileID: 201369296}
+  CNS: {fileID: 162670589}
   shoppingMenu: {fileID: 1981740344}
   affection: 0
   hunger: 0
@@ -1622,6 +1634,8 @@ MonoBehaviour:
   critterCoin: 0
   isCrownPurchased: 0
   isWizsoftCapPurchased: 0
+  doggyName: 
+  nameset: 0
 --- !u!4 &616380513
 Transform:
   m_ObjectHideFlags: 0

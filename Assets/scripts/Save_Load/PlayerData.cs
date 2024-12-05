@@ -14,4 +14,6 @@ public class PlayerData
     public int currentHat;
     public bool isCrownPurchased;
     public bool isWizsoftCapPurchased;
+    public string doggyName;
+    public bool nameSet;
 }

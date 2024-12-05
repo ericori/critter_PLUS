@@ -15,7 +15,7 @@ public class PlayerDataManager : MonoBehaviour
     public GameObject Wardrobe;
     public petVars pVars;
     public sceneController sceneController;
-    private CritterNamingSystem CNS;
+    public CritterNamingSystem CNS;
     private WardrobeClick wardrobeClick;
     public shoppingMenuV2 shoppingMenu;
 
@@ -28,6 +28,8 @@ public class PlayerDataManager : MonoBehaviour
     public int critterCoin;
     public bool isCrownPurchased;
     public bool isWizsoftCapPurchased;
+    public string doggyName;
+    public bool nameset;
 
     public void SaveGame()
     {
@@ -43,6 +45,8 @@ public class PlayerDataManager : MonoBehaviour
         playerData.currentHat = wardrobeClick.currentHat;
         playerData.isCrownPurchased = shoppingMenu.isCrownPurchased;
         playerData.isWizsoftCapPurchased = shoppingMenu.isWizsoftCapPurchased;
+        playerData.doggyName = pVars.doggyName;
+        playerData.nameSet = CNS.nameSet;
 
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
@@ -54,7 +58,7 @@ public class PlayerDataManager : MonoBehaviour
         pVars = doggy.GetComponent<petVars>();
         wardrobeClick = Wardrobe.GetComponent<WardrobeClick>();
         sceneController = sceneController.GetComponent<sceneController>();
-        CNS = FindObjectOfType<CritterNamingSystem>();
+        //CNS = FindObjectOfType<CritterNamingSystem>();
         
         string path = Application.persistentDataPath + "/playerData.json";
         if (File.Exists(path))
@@ -71,16 +75,21 @@ public class PlayerDataManager : MonoBehaviour
             wardrobeClick.currentHat = loadedData.currentHat;
             shoppingMenu.isCrownPurchased = loadedData.isCrownPurchased;
             shoppingMenu.isWizsoftCapPurchased = loadedData.isWizsoftCapPurchased;
+            pVars.doggyName = loadedData.doggyName;
+            CNS.nameSet = loadedData.nameSet;
+            CNS.nameDisplayText.text = loadedData.doggyName;
 
             if(pVars.friendRank >= 1)
             {
                 sceneController.isBrushUnlocked = true;
             }
 
+            /*
             if(pVars.friendRank >= 4)
             {
                 CNS.namingPanel.SetActive(true);
             }
+            */
 
             for (int i = 1; i < pVars.friendRank; i++)
             {
